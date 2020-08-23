@@ -70,19 +70,24 @@ def test_move_east(robot):
     assert state['row'] == 10
     assert state['col'] == 2
 
-def test_move_north_twice(robot):
+def test_move_west(robot):
+    robot.turn()
     robot.move()
+    robot.turn()
+    robot.turn()
     robot.move()
     state = robot.state()
-    assert state['row'] == 8
+    assert state['row'] == 10
     assert state['col'] == 1
 
-def test_move_north_triple(robot):
+
+def test_move_south(robot):
     robot.move()
-    robot.move()
+    robot.turn()
+    robot.turn()
     robot.move()
     state = robot.state()
-    assert state['row'] == 7
+    assert state['row'] == 10
     assert state['col'] == 1
 
 
